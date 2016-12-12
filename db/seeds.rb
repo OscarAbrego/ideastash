@@ -11,17 +11,17 @@ u2 = User.create(username:"user2", email:"email2@gmail.com", password:"desafio")
 u3 = User.create(username:"user3", email:"email3@gmail.com", password:"desafio")
 u4 = User.create(username:"user4", email:"email4@gmail.com", password:"desafio")
 
-u1p1 = Post.create(user_id: u1.id, title:"user1 post1", content:"content")
-u1p2 = Post.create(user_id: u1.id, title:"user1 post2", content:"content")
+u1p1 = Post.create(user_id: u1.id, title:"user1 post1", content:"content", category:"Technology")
+u1p2 = Post.create(user_id: u1.id, title:"user1 post2", content:"content", category:"Home")
 
-u2p1 = Post.create(user_id: u2.id, title:"user2 post1", content:"content")
-u2p2 = Post.create(user_id: u2.id, title:"user2 post2", content:"content")
+u2p1 = Post.create(user_id: u2.id, title:"user2 post1", content:"content", category:"Business")
+u2p2 = Post.create(user_id: u2.id, title:"user2 post2", content:"content", category:"Outdoors")
 
-u3p1 = Post.create(user_id: u3.id, title:"user3 post1", content:"content")
-u3p2 = Post.create(user_id: u3.id, title:"user3 post2", content:"content")
+u3p1 = Post.create(user_id: u3.id, title:"user3 post1", content:"content", category:"Health")
+u3p2 = Post.create(user_id: u3.id, title:"user3 post2", content:"content", category:"Other")
 
-u4p1 = Post.create(user_id: u4.id, title:"user4 post1", content:"content")
-u4p2 = Post.create(user_id: u4.id, title:"user4 post2", content:"content")
+u4p1 = Post.create(user_id: u4.id, title:"user4 post1", content:"content", category:"Health")
+u4p2 = Post.create(user_id: u4.id, title:"user4 post2", content:"content", category:"Outdoors")
 
 u1p1c1 = Comment.create(user_id: u1.id, post_id: u1p1.id , comment_type:"type", content: "User1 post1 Comment1")
 u1p1c2 = Comment.create(user_id: u1.id, post_id: u1p1.id , comment_type:"type", content: "User1 post1 Comment2")
@@ -67,3 +67,106 @@ u1.groups << u1g1
 u1.groups << u2g1
 u1.groups << u3g1
 u1.groups << u4g1
+
+u2.groups << u1g1
+u2.groups << u3g1
+u2.groups << u4g1
+
+u3.groups << u1g2
+u2.groups << u2g1
+u3.groups << u2g2
+u3.groups << u3g2
+u3.groups << u4g2
+
+u4.groups << u1g2
+u4.groups << u2g2
+u4.groups << u3g2
+u4.groups << u4g2
+
+u1g1p1 = Post.create(user_id: u1.id, group_id: u1g1.id , title:"user1 group1 post1", content:"content", category:"Technology")
+u1g1p2 = Post.create(user_id: u1.id, group_id: u1g1.id , title:"user1 group1 post2", content:"content", category:"Home")
+
+u1g2p1 = Post.create(user_id: u1.id, group_id: u1g2.id, title:"user1 group2 post1", content:"content", category:"Business")
+u1g2p2 = Post.create(user_id: u1.id, group_id: u1g2.id, title:"user1 group2 post2", content:"content", category:"Outdoors")
+
+
+u2g1p1 = Post.create(user_id: u2.id, group_id: u2g1.id , title:"user2 group1 post1", content:"content", category:"Technology")
+u2g1p2 = Post.create(user_id: u2.id, group_id: u2g1.id , title:"user2 group1 post2", content:"content", category:"Home")
+
+u2g2p1 = Post.create(user_id: u2.id, group_id: u2g2.id, title:"user2 group2 post1", content:"content", category:"Business")
+u2g2p2 = Post.create(user_id: u2.id, group_id: u2g2.id, title:"user2 group2 post2", content:"content", category:"Outdoors")
+
+
+u3g1p1 = Post.create(user_id: u3.id, group_id: u3g1.id , title:"user3 group1 post1", content:"content", category:"Technology")
+u3g1p2 = Post.create(user_id: u3.id, group_id: u3g1.id , title:"user3 group1 post2", content:"content", category:"Home")
+
+u3g2p1 = Post.create(user_id: u3.id, group_id: u3g2.id, title:"user3 group2 post1", content:"content", category:"Business")
+u3g2p2 = Post.create(user_id: u3.id, group_id: u3g2.id, title:"user3 group2 post2", content:"content", category:"Outdoors")
+
+
+u4g1p1 = Post.create(user_id: u4.id, group_id: u4g1.id , title:"user4 group1 post1", content:"content", category:"Technology")
+u4g1p2 = Post.create(user_id: u4.id, group_id: u4g1.id , title:"user4 group1 post2", content:"content", category:"Home")
+
+u4g2p1 = Post.create(user_id: u4.id, group_id: u4g2.id, title:"user4 group2 post1", content:"content", category:"Business")
+u4g2p2 = Post.create(user_id: u4.id, group_id: u4g2.id, title:"user4 group2 post2", content:"content", category:"Outdoors")
+
+
+
+
+u1g1p1c1 = Comment.create(user_id: u1.id, post_id: u1g1p1.id , comment_type:"type", content: "User1 group1 post1 Comment1")
+u1g1p1c2 = Comment.create(user_id: u1.id, post_id: u1g1p1.id , comment_type:"type", content: "User1 group1 post1 Comment2")
+
+u1g1p2c1 = Comment.create(user_id: u1.id, post_id: u1g1p2.id , comment_type:"type", content: "User1 group1 post2 Comment1")
+u1g1p2c2 = Comment.create(user_id: u1.id, post_id: u1g1p2.id , comment_type:"type", content: "User1 group1 post2 Comment2")
+
+
+u1g2p1c1 = Comment.create(user_id: u2.id, post_id: u1g2p1.id , comment_type:"type", content: "User1 group2 post1 Comment1")
+u1g2p1c2 = Comment.create(user_id: u2.id, post_id: u1g2p1.id , comment_type:"type", content: "User1 group2 post1 Comment2")
+
+u1g2p2c1 = Comment.create(user_id: u2.id, post_id: u1g2p2.id , comment_type:"type", content: "User1 group2 post2 Comment1")
+u1g2p2c2 = Comment.create(user_id: u2.id, post_id: u1g2p2.id , comment_type:"type", content: "User1 group2 post2 Comment2")
+
+
+
+u2g1p1c1 = Comment.create(user_id: u1.id, post_id: u2g1p1.id , comment_type:"type", content: "User1 Group1 post1 Comment1")
+u2g1p1c2 = Comment.create(user_id: u1.id, post_id: u2g1p1.id , comment_type:"type", content: "User1 Group1 post1 Comment2")
+
+u2g1p2c1 = Comment.create(user_id: u1.id, post_id: u2g1p2.id , comment_type:"type", content: "User1 Group1 post2 Comment1")
+u2g1p2c2 = Comment.create(user_id: u1.id, post_id: u2g1p2.id , comment_type:"type", content: "User1 Group1 post2 Comment2")
+
+
+u2g2p1c1 = Comment.create(user_id: u2.id, post_id: u2g2p1.id , comment_type:"type", content: "User2 Group2 post1 Comment1")
+u2g2p1c2 = Comment.create(user_id: u2.id, post_id: u2g2p1.id , comment_type:"type", content: "User2 Group2 post1 Comment2")
+
+u2g2p2c1 = Comment.create(user_id: u2.id, post_id: u2g2p2.id , comment_type:"type", content: "User2 Group2 post2 Comment1")
+u2g2p2c2 = Comment.create(user_id: u2.id, post_id: u2g2p2.id , comment_type:"type", content: "User2 Group2 post2 Comment2")
+
+
+
+u3g1p1c1 = Comment.create(user_id: u1.id, post_id: u3g1p1.id , comment_type:"type", content: "User1 Group1 post1 Comment1")
+u3g1p1c2 = Comment.create(user_id: u1.id, post_id: u3g1p1.id , comment_type:"type", content: "User1 Group1 post1 Comment2")
+
+u3g1p2c1 = Comment.create(user_id: u1.id, post_id: u3g1p2.id , comment_type:"type", content: "User1 Group1 post2 Comment1")
+u3g1p2c2 = Comment.create(user_id: u1.id, post_id: u3g1p2.id , comment_type:"type", content: "User1 Group1 post2 Comment2")
+
+
+u3g2p1c1 = Comment.create(user_id: u2.id, post_id: u3g2p1.id , comment_type:"type", content: "User2 Group2 post1 Comment1")
+u3g2p1c2 = Comment.create(user_id: u2.id, post_id: u3g2p1.id , comment_type:"type", content: "User2 Group2 post1 Comment2")
+
+u3g2p2c1 = Comment.create(user_id: u2.id, post_id: u3g2p2.id , comment_type:"type", content: "User2 Group2 post2 Comment1")
+u3g2p2c2 = Comment.create(user_id: u2.id, post_id: u3g2p2.id , comment_type:"type", content: "User2 Group2 post2 Comment2")
+
+
+
+u4g1p1c1 = Comment.create(user_id: u1.id, post_id: u4g1p1.id , comment_type:"type", content: "User1 Group1 post1 Comment1")
+u4g1p1c2 = Comment.create(user_id: u1.id, post_id: u4g1p1.id , comment_type:"type", content: "User1 Group1 post1 Comment2")
+
+u4g1p2c1 = Comment.create(user_id: u1.id, post_id: u4g1p2.id , comment_type:"type", content: "User1 Group1 post2 Comment1")
+u4g1p2c2 = Comment.create(user_id: u1.id, post_id: u4g1p2.id , comment_type:"type", content: "User1 Group1 post2 Comment2")
+
+
+u4g2p1c1 = Comment.create(user_id: u2.id, post_id: u4g2p1.id , comment_type:"type", content: "User2 Group2 post1 Comment1")
+u4g2p1c2 = Comment.create(user_id: u2.id, post_id: u4g2p1.id , comment_type:"type", content: "User2 Group2 post1 Comment2")
+
+u4g2p2c1 = Comment.create(user_id: u2.id, post_id: u4g2p2.id , comment_type:"type", content: "User2 Group2 post2 Comment1")
+u4g2p2c2 = Comment.create(user_id: u2.id, post_id: u4g2p2.id , comment_type:"type", content: "User2 Group2 post2 Comment2")
