@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IdeaBeta</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<header>
+  <nav class="fixed-block ">
+    <div class=" z-depth-4 nav-wrapper red darken-3">
+      <!-- <a href="#" class="brand-logo">Logo</a> -->
+      <%= link_to 'ideaStash', landing_index_path, class:'center brand-logo' if current_user.nil? %>
+      <%= link_to 'ideaStash', posts_path, class:'center brand-logo' unless current_user.nil? %>
+
+
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><%= link_to 'Explore', posts_path %></li>
+        <li><%= link_to 'Your stash' unless current_user.nil? %></li>
+        <li><%= link_to 'Groups', groups_path unless current_user.nil? %></li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to 'Sign in', new_user_session_path if current_user.nil? %></li>
+        <li><%= link_to 'Register', new_user_registration_path if current_user.nil? %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, :method => 'DELETE' ,  data: { confirm: 'Are you sure?' }  unless current_user.nil?%></li>
+
+      </ul>
+    </div>
+    <% unless current_user.nil? %>
+      <div id="robot-zone-row" class="row">
+        <div id="robot-zone" class="cyan lighten-5 col s12 l12 m12 z-depth-0">
+        </div>
+      </div>
+      <div id="nav-separator" class="teal darken-4 z-depth-4">
+
+      </div>
+    <% end %>
+  </nav>
+</header>
+
+
+
+<%= yield %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+</body>
+
+
+</html>

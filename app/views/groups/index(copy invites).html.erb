@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Groups</h1>
+
+<%= render 'form' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= group.user %></td>
+        <td><%= group.description %></td>
+        <td><%= link_to 'Show', group %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div id="group-invites" class="">
+  <% @not_accepted.each do |n|%>
+    <div class="invite">
+      <div class="">
+        <p><%= "#{n.user.name} has invited you to join" %></p>
+      </div>
+      <h4><%= n.name  %></h4>
+      <br>
+      <p><%= n.description %></p>
+    </div>
+    <%= link_to 'Accept', {:controller => "group",
+                                   :action => "decision",
+                                   :id => n.group_id,
+                                   :user_id => n.user.id,
+                                   :decision => "true"}, method: 'post', class: "btn btn-sm btn-success" %>
+
+    <%= link_to 'Reject', {:controller => "group",
+                                  :action => "decision",
+                                  :id => n.group_id,
+                                  :user_id => n.user.id,
+                                  :decision => "true"}, method: 'post', class: "btn btn-sm btn-success" %>
+  <% end %>
+</div>
+
+
+
+
+
+<%= link_to 'New Group', new_group_path %>

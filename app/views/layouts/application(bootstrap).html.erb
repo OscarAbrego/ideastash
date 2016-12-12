@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IdeaBeta</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+
+<nav class="navbar navbar-fixed-top ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'ideaStash', landing_index_path, id:'brand-area', class:'navbar-brand' if current_user.nil? %>
+      <%= link_to 'ideaStash', posts_path, id:'brand-area', class:'navbar-brand' unless current_user.nil? %>
+
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Explore', posts_path %></li>
+        <li><%= link_to 'Your stash' unless current_user.nil? %></li>
+        <li><%= link_to 'Groups', groups_path unless current_user.nil? %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Sign in', new_user_session_path if current_user.nil? %></li>
+        <li><%= link_to 'Register', new_user_registration_path if current_user.nil? %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, :method => 'DELETE' ,  data: { confirm: 'Are you sure?' }  unless current_user.nil?%></li>
+      </ul>
+    </div>
+  </div>
+  <div id="rand-color-bar" class="">
+
+  </div>
+</nav>
+
+
+
+<%= yield %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+</body>
+
+<script>
+  $(document).ready(function () {
+
+    var range;
+    var color = "rgb(";
+    var max = 100;
+    var min = 0;
+    var reduced_color = "rgb("
+    var reduced_color_range;
+
+    for (i = 0; i<3; i++) {
+      range = Math.floor(Math.random() * (max - min + 1)) + min;
+      reduced_color_range = Math.floor(range + 155 );
+      // if (reduced_color_range >= 255) {
+      //   reduced_color_range = 255;
+      // }
+      if (i != 2) {
+        color = (color + range + "," );
+        reduced_color = (reduced_color + reduced_color_range + ",");
+      } else {
+        color = (color + range + ")" );
+        reduced_color = (reduced_color + reduced_color_range + ")");
+      };
+      // console.log(color)
+      // console.log(reduced_color)
+    }
+
+    $('#rand-color-bar').css("background-color", color);
+    $('.navbar a').css("color", color);
+    $("body").css("background-color", reduced_color);
+    $('#brand-area').on({
+      mouseenter: function(){
+        $(this).animate({
+          opacity: 0.8,
+        }).css("color", "white");
+      },
+      mouseleave: function(){
+        $(this).animate({
+          opacity: 1
+        }).css("color", color);
+      }
+    });
+  });
+</script>
+
+
+</html>

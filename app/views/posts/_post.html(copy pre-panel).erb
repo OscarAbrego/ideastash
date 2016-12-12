@@ -1,0 +1,21 @@
+
+<div id="post-<%=post.id%>" class="container idea-panel">
+  <div class="idea-title col-xs-12">
+    <h3><%= post.title %></h3>
+  </div>
+  <div class="idea-description col-xs-12">
+    <p><%= post.content %></p>
+  </div>
+  <div class="idea-user col-xs-12">
+    <p><%= post.user %></p>
+  </div>
+  <div class="idea-open col-xs-8">
+    <p><%= link_to 'Open', post %></p>
+  </div>
+  <div class="idea-up col-xs-2">
+    Up
+  </div>
+  <div class="idea-down col-xs-2">
+    Down
+  </div>
+</div>

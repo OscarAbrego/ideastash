@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class="show-category">
+  <h2><%= @post.category %></h2>
+</div>
+<div class="show-title">
+  <h1><%= @post.title %></h1>
+</div>
+<div class="show-content">
+  <h3>Description</h3>
+  <p><%= @post.content %></p>
+</div>
+<div class="show-comment-form">
+
+</div>
+
+<div id="comment-area" class="idea-container">
+
+</div>
+<div id="idea-area" class="idea-container">
+
+    <%= render @comments %>
+
+</div>
+
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

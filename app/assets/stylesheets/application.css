@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ main, footer {
+   padding-left: 300px;
+ }
+
+
+body {
+}
+
+.fixed-block {
+  position: fixed;
+  z-index: 4;
+
+}
+.fixed-block nav {
+  z-index: 4;
+}
+nav {
+  top: 0px;
+  position: fixed;
+  z-index: 4;
+
+}
+#nav-separator {
+  height: 10px;
+  z-index: 5;
+  position: relative;
+}
+
+#robot-zone-row {
+  margin-bottom: 0px !important;
+}
+#robot-zone {
+    height: 90px;
+    margin-bottom: 0px !important;
+}
+#robot-zone {
+    height: 90px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px;
+  /*color: #999;*/
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 10px -2px rgb(0, 0, 0);
+  border: 0px;
+
+}
+.navbar a {
+  color: #999;
+}
+
+.navbar-header button {
+  border-top: 0px;
+
+}
+
+#notice {
+  margin: 0px;
+
+}
+
+#rand-color-bar {
+  height: 10px;
+}
+
+ @media only screen and (max-width : 992px) {
+     main, footer {
+     padding-left: 0;
+   }
+    .container-chan {
+      width: 48%;
+      left: 10px;
+    }
+    .idea-panel {
+      float: none !important;
+    }
+    .container-chan-right {
+      width: 48%;
+    }
+    .container-chan-left {
+      width: 48%;
+    }
+ }
+ @media only screen and (max-width : 600px) {
+    .container-chan-right {
+      width: 100%;
+      margin-top: 10px;
+      margin-right: 0% !important;
+    }
+    .container-chan-left {
+      width: 100%;
+      position: static;
+      margin-top: 164px;
+    }
+ }

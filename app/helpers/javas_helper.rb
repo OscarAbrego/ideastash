@@ -1,0 +1,2 @@
+module JavasHelper
+end

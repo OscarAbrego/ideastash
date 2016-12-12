@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Explore the public stash</h1>
+
+
+<br>
+<%= render 'form' %>
+
+<input type="text" name="buscador"></input>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Content</th>
+
+      <th>Likecount</th>
+      <th>Dislikecount</th>
+      <th>Reportcount</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @posts %>
+  </tbody>
+
+</table>
+
+<script>
+
+  $(document).ready(function(){
+
+    $("[name='buscador']").on("input", function(){
+      // console.log("hola");
+      // console.log($(this).val());
+
+      var filter = $(this).val();
+      $.ajax({
+        url: '<%= posts_path %>',
+        type: 'GET',
+        dataType: 'script',
+        data: { filter: filter }
+      })
+
+    });
+
+  });
+
+</script>

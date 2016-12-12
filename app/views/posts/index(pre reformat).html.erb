@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+  <ul id="slide-out" class="apart side-nav fixed z-depth-3 ">
+    <li></li>
+    <li class="z-depth-2"><h3>Categories</h3></li>
+    <li><a href="#!">All</a></li>
+    <li><a href="#!">Technology</a></li>
+    <li><a href="#!">Health</a></li>
+    <li><a href="#!">Business</a></li>
+    <li><a href="#!">Outdoors</a></li>
+    <li><a href="#!">Home</a></li>
+    <li><a href="#!">Other</a></li>
+
+  </ul>
+  <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
+<main class="apart ">
+  <div id="main-box" class="row">
+
+    <div id="post-bar" class="z-depth-1 col s12 m6 l7">
+      <div id="idea-area" class="container-fluid idea-container">
+        <%= render @posts %>
+      </div>
+    </div>
+
+
+    <div id="post-view-bar" class="pinned hide-on-small-only lime lighten-4 z-depth-3 col s12 m6 l4">
+      view
+    </div>
+
+
+  </div>
+</main>

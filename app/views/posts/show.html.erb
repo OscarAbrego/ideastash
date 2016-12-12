@@ -1,0 +1,57 @@
+<div class="toc-wrapper">
+  <div class="container-chan-left">
+    <!-- <div id="@post-view-bar" class=" z-depth-0"> -->
+
+      <!-- <div class="toc-wrapper"> -->
+        <div id="category-sec" class="z-depth-3">
+          <h5><strong><%= @post.category %></strong></h5>
+        </div>
+
+        <div id="data-sec" class="z-depth-1 row">
+          <div class="col s6 m6 l6">
+            <strong>Date: </strong><%= @post.created_at.strftime('%F') %>
+          </div>
+          <div class="col s6 m6 l6">
+            <strong>Post ID: </strong><%= @post.id %>
+          </div>
+        </div>
+
+        <div id="content-sec" class="z-depth-2 ">
+          <h4><%= @post.title %></h4>
+          <p><%= @post.user.username %></p>
+          <p class="truncate"><%= @post.content %></p>
+        </div>
+
+        <div id="action-sec" class="valign-wrapper row z-depth-2 ">
+          <div class="col s4 m4 l4 blue  waves-light waves-effect">
+            <p class="center-align valign">ADD</p>
+          </div>
+          <div class="col s4 m4 l4 green waves-light  waves-effect">
+            <p class="center-align valign">LIKE</p>
+          </div>
+          <div class="col s4 m4 l4 red waves-light waves-effect">
+          <p class="center-align valign">DISLIKE</p>
+          </div>
+        </div>
+
+        <div id="see-more" class=" z-depth-2  row">
+          <div class=" valign-wrapper hoverable teal waves-effect col s12 m12 l12">
+            <!-- <p class="">SEE MORE</p> -->
+            <p><%= link_to 'COMMENT', class:"center-align valign" %></p>
+
+          </div>
+        </div>
+
+      <!-- </div> -->
+
+    <!-- </div> -->
+  </div>
+</div>
+<div class="z-depth-3 container-chan-right">
+  <div class="container color-back  ">
+    <!-- <div class="white z-depth-4 container-comments"> -->
+      <%= render @comments %>
+    <!-- </div> -->
+  </div>
+
+</div>

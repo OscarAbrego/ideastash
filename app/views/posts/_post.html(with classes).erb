@@ -1,0 +1,65 @@
+
+<div id="post-<%=post.id%>" class="idea-pack">
+  <div class="toc-wrapper col s12 m6 l7 valign hoverable z-depth-1 idea-panel">
+    <!-- <div class="container-chan-left" class=""> -->
+
+      <div class="waves-effect square-box">
+        <%=  image_tag post.photo, class:"img-responsive" %>
+      </div>
+      <div class="">
+        <h5 class="truncate" ><%= post.title %></h5>
+      </div>
+      <div class="idea-description">
+        <p class="truncate" ><%= post.user.username %></p>
+      </div>
+    <!-- </div> -->
+  </div>
+
+  <div class="idea-hidden toc-wrapper hide-on-small-only col s12 m6 l5">
+    <div class="container-chan" class="pinned">
+      <!-- <div id="post-view-bar" class=" z-depth-0"> -->
+
+        <!-- <div class="toc-wrapper"> -->
+          <div class="category-sec" class="z-depth-3">
+            <h5><strong>Category</strong></h5>
+          </div>
+
+          <div class="data-sec" class="z-depth-1 row">
+            <div class="col s6 m6 l6">
+              Date:
+            </div>
+            <div class="col s6 m6 l6">
+              Post ID:
+            </div>
+          </div>
+
+          <div class="content-sec" class="z-depth-2 ">
+            <h4>title</h4>
+            <p>User</p>
+            <p class="truncate">description</p>
+          </div>
+
+          <div class="action-sec" class="valign-wrapper row z-depth-2 ">
+            <div class="col s4 m4 l4 blue  waves-light waves-effect">
+              <p class="center-align valign">ADD</p>
+            </div>
+            <div class="col s4 m4 l4 green waves-light  waves-effect">
+              <p class="center-align valign">LIKE</p>
+            </div>
+            <div class="col s4 m4 l4 red waves-light waves-effect">
+            <p class="center-align valign">DISLIKE</p>
+            </div>
+          </div>
+
+          <div class="see-more" class=" valign-wrapper z-depth-2  row">
+            <div class="hoverable teal waves-effect col s12 m12 l12">
+              <p class="center-align valign">SEE MORE</p>
+            </div>
+          </div>
+        <!-- </div> -->
+
+      <!-- </div> -->
+    </div>
+  </div>
+
+</div>

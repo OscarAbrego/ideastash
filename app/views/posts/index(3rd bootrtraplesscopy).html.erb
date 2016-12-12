@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user.nil? %>
+  <a href="<%= new_user_registration_path %> ">
+    <div id="add-idea" class="">
+      <h2>Add your own idea</h2>
+    </div>
+  </a>
+<% else %>
+  <div id="add-idea" class="">
+    <h2>Add your own idea</h2>
+  </div>
+<% end %>
+
+<%= render 'form' %>
+
+<div id="idea-area" class="container-fluid idea-container">
+  <%= render @posts %>
+</div>
+
+
+<script>
+
+    $(document).ready(function(){
+      // $("#add-idea").css("box-shadow"," 0px 2px -10px 10px rgb(0, 0, 0)")
+
+      var toggle_form = 0
+      $("#add-idea").on({
+        mouseenter: function() {
+          $(this).css("background-color", "rgb(232, 255, 212)");
+          $(this).css("box-shadow","0px 2px 20px 2px rgb(0, 0, 0)");
+          // $("#add-idea h3").css("color", "rgb(255, 255, 255)");
+          $(this).animate({
+            // height: "60px",
+            // opacity: 0.8,
+          },200).css("color", "black");
+
+          $("#idea-area").animate({
+            opacity: 0.4
+          },300).css("color", "black");
+
+        },
+        mouseleave: function () {
+          $(this).css("background-color","rgb(255, 255, 255)");
+          $(this).css("box-shadow","0px 2px 10px -2px rgb(0, 0, 0)");
+          // $("#add-idea h3").css("color", "rgb(0, 0, 0)");
+          $(this).animate({
+            // height: "50px",
+            // opacity: 1
+          },200).css("color", "black");
+
+          $("#idea-area").animate({
+            opacity: 1
+          },200).css("color", "black");
+        },
+        click: function () {
+          if (toggle_form == 0) {
+            $('#post-form-box').removeClass("hidden");
+            toggle_form = 1
+          } else {
+            $('#post-form-box').addClass("hidden");
+            toggle_form = 0
+          };
+        }
+      });
+      // $('#form_submit').on('click', function () {
+      //   $('.grid').masonry({
+      //     // options
+      //     itemSelector: '.grid-item',
+      //     columnWidth: 200
+      //   });
+      // });
+      // $('.grid').masonry({
+      //   // options
+      //   itemSelector: '.grid-item',
+      //   columnWidth: 200
+      // });
+
+              // Masonry
+    //   $('.append-button').on( 'click', function() {
+    //     // create new item elements
+    //     var $items = $('<div class="grid-item">...</div>');
+    //     // append items to grid
+    //     $grid.append( $items )
+    //     // add and lay out newly appended items
+    //     .masonry( 'appended', $items );
+    //   });
+    });
+</script>

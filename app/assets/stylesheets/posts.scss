@@ -1,0 +1,161 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#main-box {
+  top: 0;
+  height: 100%;
+  margin-left: 12px;
+}
+
+#category-pillar {
+}
+
+
+.apart {
+  margin-top: 164px;
+
+}
+
+.side-nav h3 {
+  text-align: center;
+  margin: 0px;
+  padding: 20px 20px;
+  background-color: #64b5f6;
+  color: rgb(255, 255, 255);
+
+}
+
+.square-box {
+  height: 105px;
+  width: 105px;
+  float: left;
+  margin-right: 10px;
+}
+
+
+#post-bar {
+  height: 100%;
+}
+
+#post-view-bar {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  // right: 0;
+  // padding: 0px;
+  // background-color:
+}
+
+
+.idea-panel {
+  height: 105px;
+  padding: 0px 0px 0px 0px !important;
+  // margin-left: 5px !important;
+  overflow: hidden;
+  // float: none !important;
+  margin-bottom: 10px;
+}
+// .idea-panel .row .col {
+//   float: none;
+// }
+
+.idea-title h5 {
+  padding-top: 20px;
+  margin: 0px;
+
+}
+.square-box img {
+  height: 105px;
+  width: 105px;
+}
+
+#category-sec {
+  height: 70px;
+  padding: 15px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+}
+#data-sec {
+  height: 50px;
+  padding-top: 14px;
+  // float: left;
+}
+
+#data-sec {
+  font-size: 16px;
+  // font-weight: bold;
+
+}
+
+#content-sec {
+  padding: 1px 10px 10px 10px;
+  margin-bottom: 10px;
+  height: calc(100% - 485px);
+  min-height: 160px;
+  max-height: 800px;
+}
+
+#action-sec {
+  margin-bottom: 9px;
+}
+
+#action-sec div {
+  height: 50px;
+
+}
+#action-sec div  p  {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+
+}
+.container-chan {
+  width: calc((100% - 300px)* 0.39);
+  height: 100%;
+  top: 164px;
+}
+.container-chan-left {
+  width: 35%;
+  height: 100%;
+  top: 164px;
+  margin-left: 1%;
+  position: fixed;
+}
+.container-chan-right {
+  margin-top: 164px;
+  width: 62%;
+  float: right;
+  margin-right: 1%;
+}
+
+.color-back{
+  height: 100%;
+  width: 98%;
+
+}
+.color-back .card{
+}
+
+.container-comments {
+  position: absolute;
+  left: 0.5%;
+  right: 0.5%;
+  top: 0px;
+  bottom: 1%;
+  display: block;
+  padding: 10px;
+}
+
+#see-more div {
+  height: 70px;
+
+}
+#see-more div p a{
+  padding-top: 6px;
+ font-size: 18px;
+ font-weight: bold;
+ color: rgb(255, 255, 255);
+
+}
