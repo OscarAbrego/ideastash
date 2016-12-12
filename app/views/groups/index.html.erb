@@ -2,19 +2,27 @@
 
 <h1>Listing Groups</h1>
 
-<%= render 'form' %>
 
-<div id="idea-area" class="container-fluid idea-container">
-  <%= render @groups %>
-</div>
+<section class="apart-size ">
+  <div class="row">
+    <div class="col z-depth-3 toc-wrapper hide-on-small-only s12 m6 l4">
+      <div class="container-chan-left z-depth-3 pinned">
+        <div id="group-form-area" class="container">
+          <h4>Create a new group</h4>
+          <%= render 'form' %>
+
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l8">
+      <div class="container">
+        <%= render @groups %>
+      </div>
+    </div>
+  </div>
 
 
+</section>
 <br>
 
 </div>
-
-
-
-
-
-<%= link_to 'New Group', new_group_path %>
