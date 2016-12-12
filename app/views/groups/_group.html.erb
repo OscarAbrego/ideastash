@@ -1,28 +1,16 @@
+<% unless group.id.nil? %>
 
 <div id="group-<%=group.id%>" class="container idea-panel">
   <div class="idea-title col-xs-12">
-    <h3><%= group.title %></h3>
+    <h3><%= group.name %></h3>
   </div>
   <div class="idea-description col-xs-12">
-    <p><%= group.content %></p>
+    <p><%= group.description %></p>
   </div>
 
   <div class="idea-user col-xs-12">
-    <% if group.user == nil %>
-      <p>
-        group doesnt have a user
-      </p>
-    <% else %>
-      <p><%= group.user.name %></p>
-    <% end %>
+      <p><%= group.user.username %></p>
   </div>
-  <div class="idea-open col-xs-8">
-    <p><%= link_to 'Expand', group, class: "idea-open" %></p>
-  </div>
-  <div class="idea-up col-xs-2">
-    Up
-  </div>
-  <div class="idea-down col-xs-2">
-    Down
-  </div>
+
 </div>
+<% end %>
