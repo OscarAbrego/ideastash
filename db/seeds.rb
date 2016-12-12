@@ -51,7 +51,19 @@ u4p2c1 = Comment.create(user_id: u4.id, post_id: u4p2.id , comment_type:"type", 
 u4p2c2 = Comment.create(user_id: u4.id, post_id: u4p2.id , comment_type:"type", content: "User4 post2 Comment2")
 
 
-g1 = Group.create(name:"Group1", user_id:"1", description:"Description text")
-g2 = Group.create(name:"Group2", user_id:"1", description:"Description text")
-g3 = Group.create(name:"Group3", user_id:"2", description:"Description text")
-g4 = Group.create(name:"Group4", user_id:"2", description:"Description text")
+u1g1 = Group.create(name:"Group1", user_id:"1", description:"Description text")
+u1g2 = Group.create(name:"Group2", user_id:"1", description:"Description text")
+
+u2g1 = Group.create(name:"Group3", user_id:"2", description:"Description text")
+u2g2 = Group.create(name:"Group4", user_id:"2", description:"Description text")
+
+u3g1 = Group.create(name:"Group1", user_id:"1", description:"Description text")
+u3g2 = Group.create(name:"Group2", user_id:"1", description:"Description text")
+
+u4g1 = Group.create(name:"Group3", user_id:"2", description:"Description text")
+u4g2 = Group.create(name:"Group4", user_id:"2", description:"Description text")
+
+u1.groups << u1g1
+u1.groups << u2g1
+u1.groups << u3g1
+u1.groups << u4g1

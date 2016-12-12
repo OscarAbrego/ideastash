@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   belongs_to :user
+  belongs_to :group
   has_many :comments, dependent: :destroy
 
   validates :category, presence: true
