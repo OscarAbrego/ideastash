@@ -68,35 +68,35 @@ u1.groups << u2g1
 u1.groups << u3g1
 u1.groups << u4g1
 
-u1.groups << u1g2
-u1.groups << u2g2
-u1.groups << u3g2
-u1.groups << u4g2
+# u1.groups << u1g2
+# u1.groups << u2g2
+# u1.groups << u3g2
+# u1.groups << u4g2
 
 u2.groups << u1g1
 u2.groups << u2g1
 u2.groups << u3g1
 u2.groups << u4g1
 
-u2.groups << u1g2
-u2.groups << u2g2
-u2.groups << u3g2
-u2.groups << u4g2
+# u2.groups << u1g2
+# u2.groups << u2g2
+# u2.groups << u3g2
+# u2.groups << u4g2
 
-u3.groups << u1g1
-u3.groups << u2g1
-u3.groups << u3g1
-u3.groups << u4g1
+# u3.groups << u1g1
+# u3.groups << u2g1
+# u3.groups << u3g1
+# u3.groups << u4g1
 
 u3.groups << u1g2
 u3.groups << u2g2
 u3.groups << u3g2
 u3.groups << u4g2
 
-u4.groups << u1g1
-u4.groups << u2g1
-u4.groups << u3g1
-u4.groups << u4g1
+# u4.groups << u1g1
+# u4.groups << u2g1
+# u4.groups << u3g1
+# u4.groups << u4g1
 
 u4.groups << u1g2
 u4.groups << u2g2

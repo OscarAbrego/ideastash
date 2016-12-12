@@ -5,9 +5,9 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
 
-    @groups = Group.all
+    @groups = User.all
     @group = Group.new
-    # @available_groups = current_user.
+    @available_groups = User.find(current_user.id).groups
     # @not_accepted = User.joins(:group_user).where(accepted:false)
     # @group_post = Post.joins(user: :group).where(group_id: current_user.groups.first)
   end

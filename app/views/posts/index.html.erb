@@ -18,7 +18,7 @@
     <div id="post-bar" class="z-depth-0">
       <div id="idea-area" class="">
 
-        <%= render @posts %>
+        <%= render @posts_explore %>
 
       </div>
     </div>
@@ -28,6 +28,6 @@
 <script>
 
   $(document).ready(function () {
-      $('#view-<%= @posts.first.id%>').removeClass('hide');
+      $('#view-<%= @posts_explore.first.id%>').removeClass('hide');
   });
 </script>
