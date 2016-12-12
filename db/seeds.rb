@@ -51,32 +51,52 @@ u4p2c1 = Comment.create(user_id: u4.id, post_id: u4p2.id , comment_type:"type", 
 u4p2c2 = Comment.create(user_id: u4.id, post_id: u4p2.id , comment_type:"type", content: "User4 post2 Comment2")
 
 
-u1g1 = Group.create(name:"Group1", user_id:"1", description:"Description text")
-u1g2 = Group.create(name:"Group2", user_id:"1", description:"Description text")
+u1g1 = Group.create(name:"User1 Group1", user_id:"1", description:"Description text (includes User1 User2)")
+u1g2 = Group.create(name:"User1 Group2", user_id:"1", description:"Description text (includes User3 User4)")
 
-u2g1 = Group.create(name:"Group3", user_id:"2", description:"Description text")
-u2g2 = Group.create(name:"Group4", user_id:"2", description:"Description text")
+u2g1 = Group.create(name:"User2 Group1", user_id:"2", description:"Description text (includes User1 User2)")
+u2g2 = Group.create(name:"User2 Group2", user_id:"2", description:"Descripti1n text (includes User3 User4)")
 
-u3g1 = Group.create(name:"Group1", user_id:"1", description:"Description text")
-u3g2 = Group.create(name:"Group2", user_id:"1", description:"Description text")
+u3g1 = Group.create(name:"User3 Group1", user_id:"3", description:"Description text (includes User1 User2)")
+u3g2 = Group.create(name:"User3 Group2", user_id:"3", description:"Description text (includes User3 User4)")
 
-u4g1 = Group.create(name:"Group3", user_id:"2", description:"Description text")
-u4g2 = Group.create(name:"Group4", user_id:"2", description:"Description text")
+u4g1 = Group.create(name:"User4 Group1", user_id:"4", description:"Description text (includes User1 User2)")
+u4g2 = Group.create(name:"User4 Group2", user_id:"4", description:"Description text (includes User3 User4)")
 
 u1.groups << u1g1
 u1.groups << u2g1
 u1.groups << u3g1
 u1.groups << u4g1
 
+u1.groups << u1g2
+u1.groups << u2g2
+u1.groups << u3g2
+u1.groups << u4g2
+
 u2.groups << u1g1
+u2.groups << u2g1
 u2.groups << u3g1
 u2.groups << u4g1
 
+u2.groups << u1g2
+u2.groups << u2g2
+u2.groups << u3g2
+u2.groups << u4g2
+
+u3.groups << u1g1
+u3.groups << u2g1
+u3.groups << u3g1
+u3.groups << u4g1
+
 u3.groups << u1g2
-u2.groups << u2g1
 u3.groups << u2g2
 u3.groups << u3g2
 u3.groups << u4g2
+
+u4.groups << u1g1
+u4.groups << u2g1
+u4.groups << u3g1
+u4.groups << u4g1
 
 u4.groups << u1g2
 u4.groups << u2g2

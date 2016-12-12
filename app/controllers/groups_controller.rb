@@ -7,7 +7,8 @@ class GroupsController < ApplicationController
 
     @groups = Group.all
     @group = Group.new
-    @not_accepted = User.joins(:group_user).where(accepted:false)
+    # @available_groups = current_user.
+    # @not_accepted = User.joins(:group_user).where(accepted:false)
     # @group_post = Post.joins(user: :group).where(group_id: current_user.groups.first)
   end
 
