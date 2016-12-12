@@ -19,8 +19,9 @@
 
 
       <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><%= link_to 'Home', landing_index_path if current_user.nil? %></li>
         <li><%= link_to 'Explore', posts_path %></li>
-        <li><%= link_to 'Your stash' unless current_user.nil? %></li>
+        <li><%= link_to 'Your stash', private_path unless current_user.nil? %></li>
         <li><%= link_to 'Groups', groups_path unless current_user.nil? %></li>
       </ul>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -35,7 +36,7 @@
         <div id="robot-zone" class="cyan lighten-5 col s12 l12 m12 z-depth-0">
         </div>
       </div>
-      <div id="nav-separator" class="teal darken-4 z-depth-4">
+      <div id="nav-separator" class="teal lighten-4 z-depth-4">
 
       </div>
     <% end %>

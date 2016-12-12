@@ -13,7 +13,7 @@
 
 
 .apart {
-  margin-top: 164px;
+  margin-top: 167px;
 
 }
 
@@ -21,10 +21,60 @@
   text-align: center;
   margin: 0px;
   padding: 20px 20px;
-  background-color: #64b5f6;
+  // background-color: #64b5f6;
   color: rgb(255, 255, 255);
 
 }
+
+.li-a-color-a  {
+  background-color: rgba(255, 179, 0, 0.6);
+}
+.li-a-color-a  a{
+  color: rgb(255, 255, 255);
+}
+
+.li-a-color-t  {
+  background-color: rgba(0, 102, 255, 0.6);
+}
+.li-a-color-t  a{
+  color:  rgb(255, 255, 255);
+}
+
+.li-a-color-he {
+  background-color: rgba(255, 0, 115, 0.6);
+}
+.li-a-color-he a{
+  color: rgb(255, 255, 255);
+}
+
+.li-a-color-b  {
+  background-color: rgba(31, 31, 31, 0.6);
+}
+.li-a-color-b  a{
+  color: rgb(255, 255, 255) ;
+}
+
+.li-a-color-ou  {
+  background-color: rgba(36, 255, 0, 0.6);
+}
+.li-a-color-ou a {
+  color: rgb(255, 255, 255)  ;
+}
+
+.li-a-color-ho {
+  background-color: rgba(255, 92, 0, 0.6);
+}
+.li-a-color-ho a{
+  color: rgb(255, 255, 255) ;
+}
+
+.li-a-color-ot  {
+  background-color: rgba(166, 0, 255, 0.6);
+}
+.li-a-color-ot a {
+  color: rgb(255, 255, 255);
+}
+
 
 .square-box {
   height: 105px;
