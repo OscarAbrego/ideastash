@@ -4,21 +4,22 @@
 
 
   <div id="post-form-box" class="apart-2 container ">
-    <div class="error-area">
-      <% if @post.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-        <ul>
-          <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-    </div>
     <div class="row apart">
       <div class="col s12 m8 l8">
+        <div class="error-area container z-depth-2 red lighten-2">
+          <% if @post.errors.any? %>
+          <div id="error_explanation">
+            <h4><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h4>
+
+            <ul>
+              <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+        </div>
         <h4>Describe your idea</h4>
         <div class="field">
           <%= f.label :title %><br>
@@ -31,7 +32,7 @@
 
         <div>
           <input  class="btn green actions" id="form_submit" type="submit" name="commit" value="Stash idea">
-          <%= f.submit "clear all", :type => "reset", class:"btn red actions" %>
+          <%= f.submit "clear", :type => "reset", class:"btn red actions" %>
           <%= link_to 'CANCEL', posts_path, class:"btn grey actions" %>
         </div>
 
@@ -97,10 +98,10 @@
 
         <div class=" side-form-pads field">
           <%= f.label :privacy %><br>
-          <div class="">
-              <%= f.check_box :public, class:"red filled-in" %>
+          <!-- <div class=""> -->
+              <%= f.check_box :public, checked: true , class:"red filled-in" %>
               <%= f.label 'public', id:'public'%>
-          </div>
+          <!-- </div> -->
         </div>
 
       </div>

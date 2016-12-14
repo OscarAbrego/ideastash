@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212173643) do
+ActiveRecord::Schema.define(version: 20161214180602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,15 +71,15 @@ ActiveRecord::Schema.define(version: 20161212173643) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "likecount"
-    t.integer  "dislikecount"
-    t.integer  "reportcount"
-    t.integer  "commentcount"
+    t.integer  "likecount",    default: 0
+    t.integer  "dislikecount", default: 0
+    t.integer  "reportcount",  default: 0
+    t.integer  "commentcount", default: 0
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "access",       default: "personal"
-    t.boolean  "public",       default: true
-    t.string   "category",     default: "Other"
+    t.boolean  "public",       default: false
+    t.string   "category"
     t.string   "photo"
     t.integer  "group_id"
   end
