@@ -37,7 +37,7 @@
         <div id="see-more" class=" z-depth-2  row">
           <div class=" valign-wrapper hoverable teal waves-effect col s12 m12 l12">
             <!-- <p class="">SEE MORE</p> -->
-            <p><%= link_to 'COMMENT',  class:"center-align valign" %></p>
+            <p><%= link_to 'COMMENT' , '#'%></p>
           </div>
         </div>
 
@@ -46,7 +46,7 @@
     <!-- </div> -->
   </div>
 </div>
-<div class="z-depth-3 container-chan-right">
+<div class="z-depth-3 container-chan-right-tiny">
   <div class="container color-back  ">
     <!-- <div class="white z-depth-4 container-comments"> -->
     <%= render 'comments/form' %>
@@ -55,7 +55,7 @@
   </div>
 
 </div>
-<div class="z-depth-3 container-chan-right">
+<div class="z-depth-3 container-chan-right-block">
   <div class="container color-back  ">
     <!-- <div class="white z-depth-4 container-comments"> -->
       <%= render @comments %>
@@ -63,3 +63,26 @@
   </div>
 
 </div>
+
+<script>
+  $(document).ready(function () {
+    $('select').material_select();
+    var toggle_comment = false;
+    $('#see-more').on('click', function() {
+      if (toggle_comment == false) {
+        $('.container-chan-right-tiny').css('height', 'auto');
+        $('.container-chan-right-tiny').css('padding', '15px 0px');
+        // $('.container-chan-right-tiny').removeProp('overflow');
+        toggle_comment = true;
+      } else {
+        $('.container-chan-right-tiny').css('height', '0px');
+        $('.container-chan-right-tiny').css('padding', '0px');
+        // $('.container-chan-right-tiny').prop('overflow', 'hidden');
+        toggle_comment =  false;
+      };
+    });
+
+  });
+
+
+</script>

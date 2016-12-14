@@ -178,7 +178,26 @@
   width: 62%;
   float: right;
   margin-right: 1%;
+  overflow: hidden;
 }
+
+.container-chan-right-tiny {
+  margin-top: 164px;
+  width: 62%;
+  float: right;
+  margin-right: 1%;
+  height: 0px;
+  overflow: hidden;
+
+}
+
+.container-chan-right-block{
+  margin-top: 25px;
+  width: 62%;
+  float: right;
+  margin-right: 1%;
+}
+
 
 .color-back{
   height: 100%;
@@ -214,6 +233,13 @@
 .form_text {
   resize: vertical;
   min-height: 170px;
+
+}
+
+
+.form_text_comment {
+  resize: vertical;
+  min-height: 100px;
 
 }
 

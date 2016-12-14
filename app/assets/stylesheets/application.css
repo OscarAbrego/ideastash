@@ -96,6 +96,18 @@ nav {
     .container-chan-left {
       width: 48%;
     }
+    .container-chan-right-block {
+      width: 40%;
+      /*float: right;*/
+      right: 0px;
+    }
+    .container-chan-right-tiny {
+      width: 40%;
+      /*float: right;*/
+      right: 0px;
+    }
+
+
  }
  @media only screen and (max-width : 600px) {
     .container-chan-right {
@@ -108,4 +120,17 @@ nav {
       position: static;
       margin-top: 164px;
     }
+    .container-chan-right-block {
+      width: 100%;
+      margin-top: 10px;
+      margin-right: 0% !important;
+      /*position: static;*/
+    }
+    .container-chan-right-tiny {
+      width: 100%;
+      margin-top: 10px;
+      margin-right: 0% !important;
+      /*position: static;*/
+    }
+
  }
