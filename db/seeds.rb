@@ -12,16 +12,16 @@ u3 = User.create(username:"user3", email:"email3@gmail.com", password:"desafio")
 u4 = User.create(username:"user4", email:"email4@gmail.com", password:"desafio")
 
 u1p1 = Post.create(user_id: u1.id, title:"user1 post1", content:"content", category:"Technology")
-u1p2 = Post.create(user_id: u1.id, title:"user1 post2", content:"content", category:"Home")
+u1p2 = Post.create(public: true, user_id: u1.id, title:"user1 post2", content:"content", category:"Home")
 
 u2p1 = Post.create(user_id: u2.id, title:"user2 post1", content:"content", category:"Business")
-u2p2 = Post.create(user_id: u2.id, title:"user2 post2", content:"content", category:"Outdoors")
+u2p2 = Post.create(public: true, user_id: u2.id, title:"user2 post2", content:"content", category:"Outdoors")
 
 u3p1 = Post.create(user_id: u3.id, title:"user3 post1", content:"content", category:"Health")
-u3p2 = Post.create(user_id: u3.id, title:"user3 post2", content:"content", category:"Other")
+u3p2 = Post.create(public: true, user_id: u3.id, title:"user3 post2", content:"content", category:"Other")
 
 u4p1 = Post.create(user_id: u4.id, title:"user4 post1", content:"content", category:"Health")
-u4p2 = Post.create(user_id: u4.id, title:"user4 post2", content:"content", category:"Outdoors")
+u4p2 = Post.create(public: true, user_id: u4.id, title:"user4 post2", content:"content", category:"Outdoors")
 
 u1p1c1 = Comment.create(user_id: u1.id, post_id: u1p1.id , comment_type:"type", content: "User1 post1 Comment1")
 u1p1c2 = Comment.create(user_id: u1.id, post_id: u1p1.id , comment_type:"type", content: "User1 post1 Comment2")

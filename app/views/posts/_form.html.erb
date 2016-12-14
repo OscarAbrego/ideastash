@@ -31,7 +31,7 @@
         </div>
 
         <div>
-          <input  class="btn green actions" id="form_submit" type="submit" name="commit" value="Stash idea">
+          <%= f.submit "STASH IDEA", class:"btn green actions", id:"form_submit" %>
           <%= f.submit "clear", :type => "reset", class:"btn red actions" %>
           <%= link_to 'CANCEL', posts_path, class:"btn grey actions" %>
         </div>
@@ -93,6 +93,11 @@
             <%= f.label :user_id %><br>
             <%= f.text_field :user_id, value:current_user.id %>
           </div>
+          <div class="field hide">
+            <%= f.label :group_id %><br>
+            <%= f.text_field :group_id, value:params[:group_id] %>
+          </div>
+
 
         </div>
 

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order("created_at DESC")
-    @posts_explore = Post.all.where(group_id: nil ).order("created_at DESC")
+    @posts_explore = Post.all.where(public: true ).order("created_at DESC")
 
     # @posts_private = Post.where(user_id: :current_user.id )
     @post = Post.new
@@ -34,6 +34,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    # @current_group = params[:group_id]
   end
 
   # GET /posts/1/edit
