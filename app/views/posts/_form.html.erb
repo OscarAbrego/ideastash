@@ -31,6 +31,8 @@
 
         <div>
           <input  class="btn green actions" id="form_submit" type="submit" name="commit" value="Stash idea">
+          <%= f.submit "clear all", :type => "reset", class:"btn red actions" %>
+          <%= link_to 'CANCEL', posts_path, class:"btn grey actions" %>
         </div>
 
       </div>
@@ -71,7 +73,7 @@
           <div class="">
             <%= f.label :picture %>
           </div>
-          <div class="btn red">
+          <div class="btn teal">
             <span>File</span>
             <%= f.file_field :photo, class:"file-path" %>
           </div>
