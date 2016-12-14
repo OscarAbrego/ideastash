@@ -3,8 +3,7 @@
 <%= form_for(@post, remote:false, html:{ multipart:true}) do |f| %>
 
 
-  <div id="post-form-box" class="apart container">
-    <h4>Describe your idea</h4>
+  <div id="post-form-box" class="apart-2 container ">
     <div class="error-area">
       <% if @post.errors.any? %>
       <div id="error_explanation">
@@ -18,15 +17,16 @@
       </div>
       <% end %>
     </div>
-    <div class="row">
+    <div class="row apart">
       <div class="col s12 m8 l8">
+        <h4>Describe your idea</h4>
         <div class="field">
           <%= f.label :title %><br>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, class: "z-depth-1 shadow_override" %>
         </div>
         <div class="field">
           <%= f.label :content %><br>
-          <%= f.text_area :content, class:"form_text" %>
+          <%= f.text_area :content, class:"z-depth-1 borderless_box form_text" %>
         </div>
 
         <div>
@@ -34,10 +34,10 @@
         </div>
 
       </div>
-      <div class="col s12 m4 l4 z-depth-2">
-        <div class="field z-depth-1 side-form-pads ">
+      <div class="side-form col s12 m4 l4 z-depth-2">
+        <div class="field  side-form-pads  ">
           <%= f.label :category %><br>
-          <ul>
+
 
             <p>
               <%= f.radio_button(:category, "Technology") %>
@@ -63,14 +63,14 @@
               <%= f.radio_button(:category, "Other") %>
               <%= f.label(:category, "Other", value: "Other") %>
             </p>
-          </ul>
+
 
         </div>
-
-        <div class="file-field z-depth-1  side-form-pads input-field">
+        <br>
+        <div class="file-field   side-form-pads">
           <div class="">
             <%= f.label :picture %>
-          </div><br><br>
+          </div>
           <div class="btn red">
             <span>File</span>
             <%= f.file_field :photo, class:"file-path" %>
@@ -81,7 +81,7 @@
           <%= f.hidden_field :photo_cache %>
         </div>
 
-        <div class=" side-form-pads z-depth-1">
+        <div class=" side-form-pads ">
           <div class="field ">
             <%= f.label :picture_from_web %><br>
             <%= f.text_field :remote_photo_url %>
@@ -93,7 +93,7 @@
 
         </div>
 
-        <div class=" side-form-pads field z-depth-1">
+        <div class=" side-form-pads field">
           <%= f.label :privacy %><br>
           <div class="">
               <%= f.check_box :public, class:"red filled-in" %>
