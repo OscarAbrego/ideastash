@@ -28,23 +28,46 @@
           <%= f.label :content %><br>
           <%= f.text_area :content, class:"form_text" %>
         </div>
-      </div>
-      <div class="col s12 m4 l4">
-        <div class="field">
-          <%= f.label :category %><br>
-          <p>
-            <%= f.radio_button(:category, "Technology") %>
-            <%= f.label(:category, "Technology", value: "Technology") %>
 
-          </p>
-          <p>
-            <%= f.radio_button(:category, "Business") %>
-            <%= f.label(:category, "Business", value: "Business") %>
-          </p>
+        <div>
+          <input  class="btn green actions" id="form_submit" type="submit" name="commit" value="Stash idea">
+        </div>
+
+      </div>
+      <div class="col s12 m4 l4 z-depth-2">
+        <div class="field z-depth-1 side-form-pads ">
+          <%= f.label :category %><br>
+          <ul>
+
+            <p>
+              <%= f.radio_button(:category, "Technology") %>
+              <%= f.label(:category, "Technology", value: "Technology") %>
+            </p>
+            <p>
+              <%= f.radio_button(:category, "Health") %>
+              <%= f.label(:category, "Health", value: "Health") %>
+            </p>
+            <p>
+              <%= f.radio_button(:category, "Business") %>
+              <%= f.label(:category, "Business", value: "Business") %>
+            </p>
+            <p>
+              <%= f.radio_button(:category, "Outdoors") %>
+              <%= f.label(:category, "Outdoors", value: "Outdoors") %>
+            </p>
+            <p>
+              <%= f.radio_button(:category, "Home") %>
+              <%= f.label(:category, "Home", value: "Home") %>
+            </p>
+            <p>
+              <%= f.radio_button(:category, "Other") %>
+              <%= f.label(:category, "Other", value: "Other") %>
+            </p>
+          </ul>
 
         </div>
 
-        <div class="file-field input-field">
+        <div class="file-field z-depth-1  side-form-pads input-field">
           <div class="">
             <%= f.label :picture %>
           </div><br><br>
@@ -58,35 +81,30 @@
           <%= f.hidden_field :photo_cache %>
         </div>
 
+        <div class=" side-form-pads z-depth-1">
+          <div class="field ">
+            <%= f.label :picture_from_web %><br>
+            <%= f.text_field :remote_photo_url %>
+          </div>
+          <div class="field hide">
+            <%= f.label :user_id %><br>
+            <%= f.text_field :user_id, value:current_user.id %>
+          </div>
 
-        <div class="field">
-          <%= f.label :picture_from_web %><br>
-          <%= f.text_field :remote_photo_url %>
-        </div>
-        <div class="field">
-          <%= f.label :user_id %><br>
-          <%= f.text_field :user_id, value:current_user.id %>
         </div>
 
-        <div class="field">
+        <div class=" side-form-pads field z-depth-1">
           <%= f.label :privacy %><br>
-
-          <div class="switch">
-            <label>
-              Public
-              <input type="checkbox" name="post[public]" value="false">
-              <span class="lever"></span>
-              Private
-            </label>
+          <div class="">
+              <%= f.check_box :public, class:"red filled-in" %>
+              <%= f.label 'public', id:'public'%>
           </div>
         </div>
 
       </div>
     </div>
 
-    <div>
-      <input  class="btn green actions" id="form_submit" type="submit" name="commit" value="Stash idea">
-    </div>
+
 
   </div>
 <% end %>
