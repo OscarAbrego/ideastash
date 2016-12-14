@@ -33,29 +33,15 @@
         <div class="field">
           <%= f.label :category %><br>
           <p>
-            <input name="<%= :category %>" type="radio" id="post_category" value="Technology"/>
-            <label for="test1">Technology</label>
+            <%= f.radio_button(:category, "Technology") %>
+            <%= f.label(:category, "Technology", value: "Technology") %>
+
           </p>
           <p>
-            <input name="<%= :category %>" type="radio" id="post_category" value="Health"/>
-            <label for="test2">Health</label>
+            <%= f.radio_button(:category, "Business") %>
+            <%= f.label(:category, "Business", value: "Business") %>
           </p>
-          <p>
-            <input name="<%= :category %>" type="radio" id="post_category" value="Business"/>
-            <label for="test3">Business</label>
-          </p>
-          <p>
-            <input name="<%= :category %>" type="radio" id="post_category" value="Outdoors"/>
-            <label for="test4">Outdoors</label>
-          </p>
-          <p>
-            <input name="<%= :category %>" type="radio" id="post_category" value="Home"/>
-            <label for="test5">Home</label>
-          </p>
-          <p>
-            <input name="<%= :category %>" type="radio" id="post_category" value="Other"/>
-            <label for="test6">Other</label>
-          </p>
+
         </div>
 
         <div class="file-field input-field">
