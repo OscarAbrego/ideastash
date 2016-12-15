@@ -1,1 +1,10 @@
-$("#comment_area").append('<%= j render @comment %>');
+<% if @comment.valid? %>
+
+
+$("#comment_area").prepend('<%= j render @comment %>');
+
+<% else %>
+
+alert('<%= j  @comment.errors.full_messages.to_s %>')
+
+<% end %>
