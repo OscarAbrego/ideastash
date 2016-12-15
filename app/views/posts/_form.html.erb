@@ -70,6 +70,7 @@
 
         </div>
         <br>
+
         <div class="file-field   side-form-pads">
           <div class="">
             <%= f.label :picture %>
@@ -79,7 +80,6 @@
             <%= f.file_field :photo, class:"file-path" %>
           </div>
           <div class="file-path-wrapper">
-            <%= f.file_field :photo, class:"file-path", type: "text" %>
           </div>
           <%= f.hidden_field :photo_cache %>
         </div>
@@ -89,16 +89,15 @@
             <%= f.label :picture_from_web %><br>
             <%= f.text_field :remote_photo_url %>
           </div>
-          <div class="field hide">
-            <%= f.label :user_id %><br>
-            <%= f.text_field :user_id, value:current_user.id %>
-          </div>
-          <div class="field hide">
-            <%= f.label :group_id %><br>
-            <%= f.text_field :group_id, value:params[:group_id] %>
-          </div>
+        </div>
 
-
+        <div class="field hide">
+          <%= f.label :user_id %><br>
+          <%= f.text_field :user_id, value:current_user.id %>
+        </div>
+        <div class="field hide">
+          <%= f.label :group_id %><br>
+          <%= f.text_field :group_id, value:params[:group_id] %>
         </div>
 
         <div class=" side-form-pads field">
