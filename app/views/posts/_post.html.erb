@@ -69,5 +69,6 @@
   $('#post-panel-<%=post.id%>').on('click', function(){
     $('.container-chan').addClass('hide');
     $('#view-<%=post.id%>').removeClass('hide');
-  })
+    return false
+  });
 </script>

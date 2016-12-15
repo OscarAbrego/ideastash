@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def indexprivate
     # @posts = Post.all
-    @posts_private = Post.all.where(user_id: current_user.id )
+    @posts_private = Post.all.where(user_id: current_user.id ).order("created_at DESC")
     @post = Post.new
     #code
   end
