@@ -6,9 +6,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order("created_at DESC")
-    @posts_explore = Post.all.where(public: true ).order("created_at DESC")
+    if params[:filter].blank?
+      @posts = Post.all.order("created_at DESC")
+      @posts_explore = Post.all.where(public: true ).order("created_at DESC")
+    else
+      @posts = Post.where("title like ?", "%#{params[:filter]}%")
+      @posts_explore = Post.all.where(public: true ).where("title like ?", "%#{params[:filter]}%").order("created_at DESC")
 
+    end
     # @posts_private = Post.where(user_id: :current_user.id )
     @post = Post.new
 
