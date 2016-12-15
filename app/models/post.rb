@@ -10,4 +10,12 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
 
   validates :content, presence: true
+
+  scope :technology,    ->{ where( category:"Technology")}
+  scope :health,        ->{ where( category:"Health")}
+  scope :business,      ->{  where(category:"Business")}
+  scope :outdoors,      ->{ where( category:"Outdoors")}
+  scope :home,          ->{ where( category:"Home")}
+  scope :other,         ->{  where(category:"Other")}
+
 end

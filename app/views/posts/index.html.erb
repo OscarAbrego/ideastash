@@ -2,15 +2,15 @@
 
   <ul id="slide-out" class="apart side-nav fixed z-depth-4 ">
     <li id="category-logo" class="orange darken-4 z-depth-5"><h3>Categories</h3></li>
-    <li class="li-a-color-a " ><a href="#">All</a></li>
-    <li class="li-a-color-t " ><a href="#">Technology</a></li>
-    <li class="li-a-color-he" ><a href="#">Health</a></li>
-    <li class="li-a-color-b " ><a href="#">Business</a></li>
-    <li class="li-a-color-ou " ><a href="#">Outdoors</a></li>
-    <li class="li-a-color-ho" ><a href="#">Home</a></li>
-    <li class="li-a-color-ot " ><a href="#">Other</a></li>
-    <li><%= link_to 'New post', new_post_path %></li>
     <li><input type="text" name="buscador" value=""></li>
+    <li class="li-a-color-a " ><%= link_to 'All', posts_path %></li>
+    <li class="li-a-color-t " ><%= link_to 'Technology', technology_posts_path %></li>
+    <li class="li-a-color-he" ><%= link_to 'Health', health_posts_path %></li>
+    <li class="li-a-color-b " ><%= link_to 'Business', business_posts_path %></li>
+    <li class="li-a-color-ou " ><%= link_to 'Outdoors', outdoors_posts_path %></li>
+    <li class="li-a-color-ho" ><%= link_to 'Home', home_posts_path %></li>
+    <li class="li-a-color-ot " ><%= link_to 'Other', other_posts_path %></li>
+    <li><%= link_to 'New post', new_post_path %></li>
   </ul>
   <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
 <main class="apart ">
@@ -28,10 +28,18 @@
 
 <%= link_to 'New post', new_post_path %>
 
-<script>
 
-  $(document).ready(function () {
+<% unless @posts_explore = nil %>
+  <script>
+    $(document).ready(function () {
       $('#view-<%= @posts_explore.first.id%>').removeClass('hide');
+    });
+  </script>
+<% end %>
+
+<script>
+  $(document).ready(function () {
+
       $("[name = 'buscador']").on('input', function(){
        var filter = $(this).val();
        $.ajax({

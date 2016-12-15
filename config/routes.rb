@@ -5,7 +5,16 @@ Rails.application.routes.draw do
   get 'users/profile'
 
   resources :comments
-  resources :posts
+  resources :posts do
+    collection do
+      get :technology
+      get :health
+      get :business
+      get :outdoors
+      get :home
+      get :other
+    end
+  end
   devise_for :admins
   devise_for :users, controllers: {
     sessions: 'users/sessions',

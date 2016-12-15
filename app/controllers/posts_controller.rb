@@ -19,6 +19,36 @@ class PostsController < ApplicationController
 
   end
 
+  def technology
+    @posts_explore = Post.technology.order("created_at DESC").where(public: true )
+    render action: :index
+  end
+  def health
+    @posts_explore = Post.health.order("created_at DESC").where(public: true )
+    render action: :index
+  end
+  def business
+    @posts_explore = Post.business.order("created_at DESC").where(public: true )
+    render action: :index
+  end
+  def outdoors
+    @posts_explore = Post.outdoors.order("created_at DESC").where(public: true )
+    render action: :index
+  end
+  def home
+    @posts_explore = Post.home.order("created_at DESC").where(public: true )
+    render action: :index
+  end
+  def other
+    @posts_explore = Post.other.order("created_at DESC").where(public: true )
+    render action: :index
+  end
+
+
+
+
+
+
   def indexprivate
     # @posts = Post.all
     @posts_private = Post.all.where(user_id: current_user.id ).order("created_at DESC")
