@@ -12,7 +12,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  resources :groups do
+    resources :posts
+  end
+
   get 'indexprivate/', to:'posts#indexprivate', as: 'private'
+
   get 'landing/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
