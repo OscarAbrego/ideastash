@@ -29,6 +29,13 @@
 <%= link_to 'New post', new_post_path %>
 
 
+<% unless @posts_explore = nil %>
+  <script>
+    $(document).ready(function () {
+      $('#view-<%= @posts_explore.first.id%>').removeClass('hide');
+    });
+  </script>
+<% end %>
 
 <script>
   $(document).ready(function () {

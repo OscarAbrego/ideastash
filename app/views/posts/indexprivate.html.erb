@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+private_<p id="notice"><%= notice %></p>
 
   <ul id="slide-out" class="apart side-nav fixed z-depth-3 ">
     <li id="category-logo" class="red z-depth-4"><h3>Categories</h3></li>
-    <li class="li-a-color-a " ><a href="#">All</a></li>
+
+    <li><input type="text" name="buscador" value=""></li>
+    <li class="li-a-color-a " ><%= link_to 'All', private_path %></li>
 
     <li class="" ><a href="#">Your ideas</a></li>
     <li class="" ><a href="#">Added ideas</a></li>
-
-    <li class="li-a-color-t " ><a href="#">Technology</a></li>
-    <li class="li-a-color-he" ><a href="#">Health</a></li>
-    <li class="li-a-color-b " ><a href="#">Business</a></li>
-    <li class="li-a-color-ou " ><a href="#">Outdoors</a></li>
-    <li class="li-a-color-ho" ><a href="#">Home</a></li>
-    <li class="li-a-color-ot " ><a href="#">Other</a></li>
-
+    <li class="li-a-color-t " ><%= link_to 'Technology', private_tec_path %></li>
+    <li class="li-a-color-he" ><%= link_to 'Health', private_hea_path %></li>
+    <li class="li-a-color-b " ><%= link_to 'Business', private_bus_path %></li>
+    <li class="li-a-color-ou " ><%= link_to 'Outdoors', private_out_path %></li>
+    <li class="li-a-color-ho" ><%= link_to 'Home', private_hom_path %></li>
+    <li class="li-a-color-ot " ><%= link_to 'Other', private_oth_path %></li>
+    <li><%= link_to 'New post', new_post_path %></li>
   </ul>
   <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
 <main class="apart ">
@@ -30,9 +31,18 @@
   </div>
 </main>
 
-<script>
 
+<script>
   $(document).ready(function () {
-      $('#view-<%= @posts_private.first.id%>').removeClass('hide');
+
+      $("[name = 'buscador']").on('input', function(){
+       var filter = $(this).val();
+       $.ajax({
+         url:'<%= posts_path %>',
+         type:'GET',
+         dataType: 'script',
+         data: {filter: filter}
+       });
+     });
   });
 </script>

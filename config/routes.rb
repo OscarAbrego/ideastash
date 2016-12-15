@@ -26,6 +26,24 @@ Rails.application.routes.draw do
   end
 
   get 'indexprivate/', to:'posts#indexprivate', as: 'private'
+  get 'private_technology/', to:'posts#indexprivate_technology', as: 'private_tec'
+  get 'private_health/', to:'posts#indexprivate_health', as: 'private_hea'
+  get 'private_business/', to:'posts#indexprivate_business', as: 'private_bus'
+  get 'private_outdoors/', to:'posts#indexprivate_outdoors', as: 'private_out'
+  get 'private_home/', to:'posts#indexprivate_home', as: 'private_hom'
+  get 'private_other/', to:'posts#indexprivate_other', as: 'private_oth'
+
+  #
+  # resources :indexprivate, only: [] do
+  #   collection do
+  #     get :technology_private
+  #     get :health_private
+  #     get :business_private
+  #     get :outdoors_private
+  #     get :home_private
+  #     get :other_private
+  #   end
+  # end
 
   get 'landing/index'
 

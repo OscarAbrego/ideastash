@@ -45,6 +45,32 @@ class PostsController < ApplicationController
   end
 
 
+# for indexprivate
+  def indexprivate_technology
+    @posts_private = Post.technology_private.order("created_at DESC")
+    render action: :indexprivate
+  end
+  def indexprivate_health
+    @posts_private = Post.health_private.order("created_at DESC")
+    render action: :indexprivate
+  end
+  def indexprivate_business
+    @posts_privateprivate = Post.business_private.order("created_at DESC")
+    render action: :indexprivate
+  end
+  def indexprivate_outdoors
+    @posts_private = Post.outdoors_private.order("created_at DESC")
+    render action: :indexprivate
+  end
+  def indexprivate_home
+    @posts_private = Post.home_private.order("created_at DESC")
+    render action: :indexprivate
+  end
+  def indexprivate_other
+    @posts_private = Post.other_private.order("created_at DESC")
+    render action: :indexprivate
+  end
+
 
 
 
@@ -52,8 +78,18 @@ class PostsController < ApplicationController
   def indexprivate
     # @posts = Post.all
     @posts_private = Post.all.where(user_id: current_user.id ).order("created_at DESC")
-    @post = Post.new
     #code
+    if params[:filter].blank?
+      # @posts = Post.all.order("created_at DESC")
+      @posts_private = Post.all.where(user_id: current_user.id ).order("created_at DESC")
+    else
+      # @posts = Post.where("title like ?", "%#{params[:filter]}%")
+      @posts_private = Post.all.where(user_id: current_user.id ).where("title like ?", "%#{params[:filter]}%").order("created_at DESC")
+
+    end
+    # @posts_private = Post.where(user_id: :current_user.id )
+    @post = Post.new
+
   end
 
   # GET /posts/1

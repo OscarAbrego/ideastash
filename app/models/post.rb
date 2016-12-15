@@ -18,4 +18,10 @@ class Post < ActiveRecord::Base
   scope :home,          ->{ where( category:"Home")}
   scope :other,         ->{  where(category:"Other")}
 
+  scope :technology_private,    ->{ where( category:"Technology")}
+  scope :health_private,        ->{ where( category:"Health")}
+  scope :business_private,      ->{  where(category:"Business")}
+  scope :outdoors_private,      ->{ where( category:"Outdoors")}
+  scope :home_private,          ->{ where( category:"Home")}
+  scope :other_private,         ->{  where( category:"Other")}
 end
