@@ -12,15 +12,27 @@
 
 <header>
   <nav class="fixed-block ">
-    <div id="robot-zone-row" class="row">
-      <div id="robot-zone" class="cyan lighten-5 col s12 l12 m12 z-depth-0">
+    <!-- <div id="robot-zone-row" class="row"> -->
+      <div id="robot-zone" class="nav-wrapper grey lighten-4 col s12 l12 m12 z-depth-0 row">
+        <!-- <div class=" short-box cyan lighten-5 col s4 m4 l4 z-depth-4">
+
+        </div>
+        <div class=" tall-box orange lighten-5 col s4 m4 l4 z-depth-4">
+
+        </div>
+        <div class=" short-box cyan lighten-5 col s4 m4 l4 z-depth-4">
+
+        </div> -->
+
       </div>
+    <!-- </div> -->
+
+    <div id="nav-separator" class="teal darken-4 z-depth-4">
     </div>
 
-    <div id="nav-separator" class="teal lighten-4 z-depth-4">
-    </div>
+
+
     <div class=" z-depth-4 nav-wrapper teal darken-3">
-      <!-- <a href="#" class="brand-logo">Logo</a> -->
       <%= link_to 'ideaStash', landing_index_path, class:'center brand-logo' if current_user.nil? %>
       <%= link_to 'ideaStash', posts_path, class:'center brand-logo' unless current_user.nil? %>
 

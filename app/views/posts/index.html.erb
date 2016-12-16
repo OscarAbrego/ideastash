@@ -34,6 +34,7 @@
 
 <script>
   $(document).ready(function () {
+    document.elementFromPoint(350, 200).click();
 
       $("[name = 'buscador']").on('input', function(){
        var filter = $(this).val();
@@ -44,5 +45,9 @@
          data: {filter: filter}
        });
      });
+     //
+    //  $('.idea-pack').click(function() {
+    //    $(this).removeClass('hide');
+    //  });
   });
 </script>

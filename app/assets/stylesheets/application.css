@@ -50,7 +50,25 @@ nav {
 }
 #robot-zone {
     height: 90px;
+
 }
+
+.tall-box {
+  height: 80px;
+}
+
+.short-box {
+  height: 50px;
+}
+
+
+
+
+
+
+
+
+
 
 .navbar {
   margin-bottom: 0px;
