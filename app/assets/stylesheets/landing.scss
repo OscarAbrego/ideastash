@@ -7,29 +7,66 @@ h1 {
 }
 
 #stage {
-  padding: 0px;
-  margin: 0px;
+  // padding: 0px;
+  // margin: 0px;
+  background: url('pen_idea.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 
 }
-
+.apart-0 {
+  margin-top: 160px;
+  top: 160px;
+}
 .stage_back{
 
-    position: relative;
-    height: 100%;
-    width: 100%;
-    padding: 150px 0 150px 0;
-    top: 0;
-    left: 0;
-    background: rgba(24, 32, 40, 0.9);
-    z-index: 3;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    text-align: center;
-    color: #FFF;
-    overflow: hidden;
-    -webkit-transition: background 0.2s ease-out;
-    transition: background 0.2s ease-out;
+  height:650px;
+  background-color: rgba(100, 200, 180, 0.8);
+
+  // background: url('pen_idea.jpg') no-repeat center center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+
+  // background-size: 100%;
+  // background-color: rgba(50,50,50, 0.5);
 }
+.stage_back h3 {
+font-size: 2rem;
+color: rgb(255, 255, 255);
+text-align: center;
+}
+
+.stage_back h1 {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  // position: relative;
+}
+
+.container-stage {
+  width: 100%;
+  // margin: auto;
+}
+
+#red {
+  display: block;
+  height: 800px;
+  width: 100%;
+  position: absolute;
+}
+.stage-info{
+  height: 800px;
+  position: relative;
+  z-index: 2;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
 
 .btn-outline-inverse {
     color: #000;
