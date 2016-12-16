@@ -5,17 +5,24 @@ class LikesController < ApplicationController
   # end
 
   def create
-    @like = Like.new()
-
-    @like.update_attribute(polarity: true)
-
+    @post = Post.find(params[:post_id])
+    @like = Like.new(:post => @post, :user => current_user, :polarity => true)
     @like.save
-
-    redirect_to @like
+    
   end
 
   def update
 
+  end
+
+  private
+
+  def set_post
+    @like = Like.find(params[:id])
+  end
+
+  def like_params
+    params.require(:like).permit(:user_id, :post_id, :polarity, posts_attributes: [:id])
   end
 
 end
