@@ -34,6 +34,7 @@ private_<p id="notice"><%= notice %></p>
 
 <script>
   $(document).ready(function () {
+      document.elementFromPoint(550, 200).click();
 
       $("[name = 'buscador']").on('input', function(){
        var filter = $(this).val();
