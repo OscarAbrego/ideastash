@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :groups
-
 
   get 'users/profile'
 
   resources :comments
   resources :posts do
+    resources :like
     collection do
       get :technology
       get :health
@@ -19,8 +18,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
+
+
   }
 
+  # resources :groups
   resources :groups do
     resources :posts
   end
