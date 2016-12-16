@@ -20,18 +20,24 @@ h1 {
   top: 160px;
 }
 .stage_back{
+ padding-top: 180px;
 
   height:650px;
-  background-color: rgba(100, 200, 180, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 
-  // background: url('pen_idea.jpg') no-repeat center center;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
 
-  // background-size: 100%;
-  // background-color: rgba(50,50,50, 0.5);
+  -webkit-flex-direction: column;
+    -moz-flex-direction: -moz-column;
+  flex-direction: column;
+
+  -webkit-align-items: center;
+  -moz-align-items: -moz-center;
+  align-items: center;
 }
+
 .stage_back h3 {
 font-size: 2rem;
 color: rgb(255, 255, 255);
@@ -42,35 +48,37 @@ text-align: center;
   font-size: 4rem;
   color: rgb(255, 255, 255);
   text-align: center;
-  // position: relative;
 }
 
 .container-stage {
-  width: 100%;
-  // margin: auto;
 }
 
-#red {
-  display: block;
-  height: 800px;
-  width: 100%;
-  position: absolute;
+.t-center {
+  text-align: center;
 }
-.stage-info{
-  height: 800px;
-  position: relative;
-  z-index: 2;
-
-  right: 0;
-  bottom: 0;
-  left: 0;
-  top: 0;
-}
-
 
 .btn-outline-inverse {
     color: #000;
     background-color: transparent;
     border-color: #cdbfe3;
     z-index: 4;
+}
+
+#introduction p {
+  font-size: 1rem;
+  line-height: 1.8 ;
+  text-align: justify;
+
+}
+
+.contained-image {
+  background: url('pen_idea.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: inherit;
+}
+
+.height-auto {
+  height: auto;
 }
