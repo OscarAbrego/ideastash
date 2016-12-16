@@ -2,9 +2,22 @@ Rails.application.routes.draw do
 
   get 'users/profile'
 
+# Devise routes
+  devise_for :admins
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+# comments for posts, should they be anidated?
   resources :comments
+
+# Post resources, collecions for filters and like for likes
+# Not all posts belong to a group, or should they D:?
   resources :posts do
-    resources :like
+
+    resources :like, only [:create, :update]
+
     collection do
       get :technology
       get :health
@@ -14,15 +27,8 @@ Rails.application.routes.draw do
       get :other
     end
   end
-  devise_for :admins
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
 
-
-  }
-
-  # resources :groups
+# Groups have posts inside and belongign to them
   resources :groups do
     resources :posts
   end
