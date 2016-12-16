@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 # Not all posts belong to a group, or should they D:?
   resources :posts do
 
-    resources :like, only [:create, :update]
+    resources :likes, only: [:create, :update]
 
     collection do
       get :technology

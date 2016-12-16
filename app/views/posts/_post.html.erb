@@ -40,13 +40,13 @@
           </div>
 
           <div id="action-sec" class="valign-wrapper row z-depth-2 ">
-            <div class="col s4 m4 l4 blue  waves-light waves-effect">
+            <div id="post-add-<%=post.id%>" class="col s4 m4 l4 blue  waves-light waves-effect">
               <p class="center-align valign">ADD</p>
             </div>
-            <div class="col s4 m4 l4 green waves-light  waves-effect">
+            <div id="post-like-<%=post.id%>" class="col s4 m4 l4 green waves-light  waves-effect">
               <p class="center-align valign">LIKE</p>
             </div>
-            <div class="col s4 m4 l4 red waves-light waves-effect">
+            <div id="post-dislike-<%=post.id%>" class="col s4 m4 l4 red waves-light waves-effect">
             <p class="center-align valign">DISLIKE</p>
             </div>
           </div>
@@ -71,4 +71,14 @@
     $('#view-<%=post.id%>').removeClass('hide');
     return false
   });
+
+  $('#post-like-<%=post.id%>').on('click', function () {
+    console.log('valor');
+    $.ajax({
+      type: "POST",
+      url:'<%= post_likes_url(post) %>',
+      dataType:'script'
+    });
+  });
+
 </script>
