@@ -2,7 +2,7 @@
 
   <ul id="slide-out" class="apart side-nav fixed z-depth-4 ">
     <li id="category-logo" class="orange darken-4 z-depth-5"><h3>Categories</h3></li>
-    <li><input type="text" name="buscador" value=""></li>
+    <li><input type="text" name="buscador" value="" placeholder="  Search"></li>
     <li class="li-a-color-a " ><%= link_to 'All', posts_path %></li>
     <li class="li-a-color-t " ><%= link_to 'Technology', technology_posts_path %></li>
     <li class="li-a-color-he" ><%= link_to 'Health', health_posts_path %></li>
@@ -10,7 +10,9 @@
     <li class="li-a-color-ou " ><%= link_to 'Outdoors', outdoors_posts_path %></li>
     <li class="li-a-color-ho" ><%= link_to 'Home', home_posts_path %></li>
     <li class="li-a-color-ot " ><%= link_to 'Other', other_posts_path %></li>
+    <% unless current_user.nil? %>
     <li><%= link_to 'New post', new_post_path %></li>
+    <% end %>
   </ul>
   <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
 <main class="apart ">
